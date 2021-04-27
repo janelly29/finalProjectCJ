@@ -9,10 +9,6 @@ How to run our Program :
 3) You can insert a title for your graph such as "Concentration vs time Rate Laws"
     a)make sure to delete the text in the box
 4) Insert numerical values into the two other text boxes that say "Enter time values" and "Enter concentration values"
-    a)be aware that each list must be equal in length, so one box can't have 4 numbers and the other have 5
-      they have to be equal else they won't graph.
-    b)to insert the values make sure they have a space between them, no commas. ex: 1 2 3
-    c)numbers can only be increasing or decreasing. ex: 1 2 3 or 3 2 1 ex of what wont work: 1 3 2 
 5)after you've inserted your values, click on button of which rate law you wish to plot 
     a) at the top can be zero, first, or second order. 
 6)a graph should appear as a dashed line with stars to mark the points
