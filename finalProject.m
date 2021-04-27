@@ -22,17 +22,19 @@ function[] = finalProject()
    
     %different elements of the plot that the user can essentially change
     plotgui.titleBox = uicontrol('style', 'edit', 'string', 'Insert Title', 'units', 'normalized' , 'position', [0.42 0.95 0.2 0.05]); 
-    plotgui.xAxisTitleBox = uicontrol('style', 'text', 'string', 'Time (s)', 'units', 'normalized' , 'position', [0.44 0.02 0.15 0.05]); 
-    plotgui.yAxisTitleBox = uicontrol('style', 'text', 'string', 'Concentration(M)', 'units', 'normalized' , 'position', [0.002 0.5 0.1 0.05]); 
     plotgui.xValuesBox = uicontrol('style', 'edit', 'string', 'Enter Time Values', 'units', 'normalized' , 'position', [0.2 0.02 0.1 0.05]); 
     plotgui.yValuesBox = uicontrol('style', 'edit', 'string', 'Enter Concentration Values', 'units', 'normalized' , 'position', [0.01 0.85 0.1 0.05]); 
   
+    %Set gui elements that the user cannot change
+    plotgui.xAxisTitleBox = uicontrol('style', 'text', 'string', 'Time (s)', 'units', 'normalized' , 'position', [0.44 0.02 0.15 0.05]); 
+    plotgui.yAxisTitleBox = uicontrol('style', 'text', 'string', 'Concentration (M)', 'units', 'normalized' , 'position', [0.002 0.5 0.1 0.05]); 
+    
     %callback function for zero order plotting
     function [] = plotzeroCallback(~,~)
         if ~isempty(plotgui.xValuesBox.String) || ~isempty(plotgui.yValuesBox.String) 
         %changes text in text box to numbers
             xValues = str2num(plotgui.xValuesBox.String);
-            yValues = str2num(plotgui.yValuesBox.String);
+             yValues = str2num(plotgui.yValuesBox.String);
     else
         return;
     end
@@ -67,7 +69,7 @@ function[] = finalProject()
     %plots the points inputed as a red dashed line with stars at the points
     plotgui.p = plot(x2, y2,'r--*');
     
-    %sets limits for the graph depending on values of 
+    %sets limits for the graph depending on values of x and y
     xLowerLim = x2(1)-.5;
     xUpperLim = x2(length(x2))+.5;
     xlim([xLowerLim xUpperLim]);
